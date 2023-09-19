@@ -12,8 +12,8 @@ class MainScreenViewModel():ViewModel() {
 
     private val repository=MainRepository()
 
-    private val _weatherLiveData= MutableLiveData<WeatherDataClass?>()
-    val weatherLiveData:LiveData<WeatherDataClass?> =_weatherLiveData
+    private val _weatherLiveData= MutableLiveData<List<WeatherDataClass>?>()
+    val weatherLiveData:LiveData<List<WeatherDataClass>?> =_weatherLiveData
 
     fun refreshWeatherData(lat:Double,long:Double){
         viewModelScope.launch {

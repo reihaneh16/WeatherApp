@@ -15,7 +15,7 @@ data class WeatherDataClass (
         @SerializedName("daily"                 ) var daily                : Daily?          = Daily()
 
 
-)
+){
 
     data class CurrentWeather (
 
@@ -52,3 +52,4 @@ data class WeatherDataClass (
     )
 
 
+}
