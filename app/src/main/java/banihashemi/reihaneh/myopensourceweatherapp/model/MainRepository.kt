@@ -5,12 +5,16 @@ import retrofit2.Response
 class MainRepository {
 
     suspend fun getWeatherData(lat:Double,long:Double): List<WeatherDataClass>? {
-        val response= NetworkLayer.apiClient.getWeatherData(lat, long )
-        if (response.isSuccessful){
-            return response.body()
-        }
-        else
-            return null
+        val request= NetworkLayer.apiClient.getWeatherData(lat, long )
 
+
+        if (request.failed){
+            return null
+        }
+        if (!request.isSuccessful){
+            return null
+        }
+
+        return request.body
     }
 }
